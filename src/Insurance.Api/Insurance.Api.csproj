@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="14.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
+    <PackageReference Include="Scalar.AspNetCore" Version="2.12.35" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Modules\Customers\Api\" />
+    <Folder Include="Modules\Customers\Application\Commands\" />
+    <Folder Include="Modules\Customers\Application\Handlers\" />
+    <Folder Include="Modules\Customers\Application\Queries\" />
+    <Folder Include="Modules\Finance\Api\" />
+    <Folder Include="Modules\Finance\Application\Commands\" />
+    <Folder Include="Modules\Finance\Application\Handlers\" />
+    <Folder Include="Modules\Finance\Application\Queries\" />
+    <Folder Include="Modules\Finance\Domain\Dto\" />
+    <Folder Include="Modules\Finance\Infrastructure\Implementations\" />
+    <Folder Include="Modules\Finance\Infrastructure\Interfaces\" />
+    <Folder Include="Modules\Policies\Api\" />
+    <Folder Include="Modules\Policies\Application\Commands\" />
+    <Folder Include="Modules\Policies\Application\Handlers\" />
+    <Folder Include="Modules\Policies\Application\Queries\" />
+    <Folder Include="Modules\Policies\Domain\Dto\" />
+    <Folder Include="Modules\Policies\Infrastructure\Implementations\" />
+    <Folder Include="Modules\Policies\Infrastructure\Interfaces\" />
+    <Folder Include="Shared\" />
+  </ItemGroup>
+
+</Project>

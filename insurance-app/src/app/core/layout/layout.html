@@ -1,0 +1,79 @@
+<z-layout class=" h-screen overflow-y-hidden border font-text ">
+ 
+      <z-layout>
+        <z-sidebar  [zWidth]="200" class="p-0! rounded-none min-h-sreen">
+          <nav class="flex h-full flex-col gap-2 p-4 pt-10">
+            @for (section of data; track $index) {
+                <z-sidebar-group [id]="section.id">
+                    <z-sidebar-group-label>{{ section.menuTitle }}</z-sidebar-group-label>
+                    @for (item of section.items; track $index) {
+                        <a [routerLink]="item.path" type="button" z-button [zType]="currentRouteUrl == item.path ? 'secondary' : 'ghost'" [id]="item.id" class="flex items-center hover:bg-accent justify-start rounded-lg">
+                            <z-icon [zType]="item.icon" [zSize]="'lg'" class="mr-2"  />
+                            {{ item.label }}
+                        </a>
+                    }
+                </z-sidebar-group>
+            }
+          </nav>
+
+          
+        </z-sidebar>
+
+        <z-layout>
+            <z-header class="border-none justify-end sticky top-0">
+                <div class="w-1/5 flex justify-end pr-10 gap-3">
+                    <button type="button" z-button z-dropdown zDropdownTrigger [zDropdownMenu]="notifications" class="rounded-full p-2 bg-accent hover:bg-black/20">
+                        <z-icon [zType]="'bell'" [zSize]="'lg'" class="text-primary hover:text-white" />
+                    </button>
+                    <z-dropdown-menu-content  #notifications="zDropdownMenuContent" class="w-100 px-4 min-h-40 max-h-80 z-50 fixed font-text right-45 overflow-y-auto pb-4">
+                        <z-menu-label>Notifications</z-menu-label>
+ 
+                        <z-dropdown-menu-item   class="bg-background! flex flex-col border mb-5 hover:bg-accent!">
+                            <header class="w-full flex items-center p-1 gap-3 font-medium">
+                                <z-icon [zType]="'triangle-alert'" />
+                                Update alert
+                            </header>
+                            <p class="w-full p-2 font-normal">
+                                new security updates dropped
+                            </p>
+                        </z-dropdown-menu-item>
+
+                        <z-dropdown-menu-item   class="bg-background flex flex-col border mb-5">
+                            <header class="w-full flex items-center p-1 gap-3 font-medium">
+                                <z-icon [zType]="'activity'" />
+                                Update alert
+                            </header>
+                            <p class="w-full p-2 font-normal">
+                                new security updates dropped
+                            </p>
+                        </z-dropdown-menu-item>
+
+                        
+
+                    </z-dropdown-menu-content>
+                    <button type="button" z-button z-dropdown zDropdownTrigger [zDropdownMenu]="options" class="rounded-full p-2 bg-accent hover:bg-black/20">
+                        <z-icon [zType]="'ellipsis'" [zSize]="'lg'" class="text-primary hover:text-white" />
+                    </button>
+                    
+                    <z-dropdown-menu-content  #options="zDropdownMenuContent" class="w-50 min-h-40 z-50 fixed right-45 ">
+                        <z-menu-label>Options</z-menu-label>
+ 
+                        <z-dropdown-menu-item >
+                            Account
+                        </z-dropdown-menu-item>
+
+                        <z-dropdown-menu-item >
+                            Account
+                        </z-dropdown-menu-item>
+
+                    </z-dropdown-menu-content>
+
+                </div>
+            </z-header>
+          <z-content class="min-h-screen overflow-y-auto">
+            
+            <router-outlet />
+          </z-content>
+        </z-layout>
+      </z-layout>
+    </z-layout>

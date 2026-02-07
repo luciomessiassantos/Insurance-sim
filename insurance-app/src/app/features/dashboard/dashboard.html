@@ -1,0 +1,10 @@
+<main class="w-full h-screen bg-background">
+
+    <section class="w-full h-1/4 justify-evenly gap-4 p-1 flex enter-top">
+        <app-info-card class="w-1/4" [label]="'Total customers'" [data]="'304'" [statusData]="{ status: 'positive', data: '+ 10%', details: 'since last month'  }" [icon]="'users'" />
+        <app-info-card class="w-1/4" [label]="'Total revenue'" [data]="'R$ 4.890,10'" [statusData]="{ status: 'positive', data: '+ 20,4%', details: 'since last month'  }" [icon]="'dollar-sign'" />
+        <app-info-card class="w-1/4" [label]="'Total policies'" [data]="'1.670'" [statusData]="{ status: 'negative', data: '- 0,3%', details: 'since last request'  }" [icon]="'clipboard'" />
+        <app-info-card class="w-1/4" [label]="'Total covers'" [data]="'R$ 1.403,90'" [statusData]="{ status: 'positive', data: '+ 3%', details: 'since last month'  }" [icon]="'credit-card'" />
+    </section>
+
+</main>
