@@ -1,0 +1,16 @@
+<z-card onclick="action()" class="h-full min-w-65 border-dashed cursor-pointer  hover:bg-accent transition-colors duration-200 ease-in-out shadow-none">
+    <section class="w-full flex items-center gap-4 justify-evenly ">
+        <div class="p-3 bg-accent rounded-full">
+            @if (icon) {
+                <z-icon [zType]="icon"  class="text-2xl w-6 h-6 text-primary" [zSize]="'lg'" />
+            }
+        </div>
+        <article class="min-w-2/3">
+            <h1 class="text-lg font-semibold">{{ data }}</h1>
+        </article>
+    </section>
+
+    <div class="flex justify-start w-full gap-1.5 text-sm mt-2">
+            <p>{{details}}</p>
+    </div>
+</z-card>

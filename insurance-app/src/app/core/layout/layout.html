@@ -8,7 +8,7 @@
                     <z-sidebar-group-label>{{ section.menuTitle }}</z-sidebar-group-label>
                     @for (item of section.items; track $index) {
                         <a [routerLink]="item.path" type="button" z-button [zType]="currentRouteUrl == item.path ? 'secondary' : 'ghost'" [id]="item.id" class="flex items-center hover:bg-accent justify-start rounded-lg">
-                            <z-icon [zType]="item.icon" [zSize]="'lg'" class="mr-2"  />
+                            <lucide-icon [img]="item.icon" />
                             {{ item.label }}
                         </a>
                     }
@@ -20,7 +20,10 @@
         </z-sidebar>
 
         <z-layout>
-            <z-header class="border-none justify-end sticky top-0">
+            <z-header class="border-none justify-between sticky top-0">
+                <div class="font-medium text-lg">
+                    <h1>Olá {{authStore.user().username}} </h1>
+                </div>
                 <div class="w-1/5 flex justify-end pr-10 gap-3">
                     <button type="button" z-button z-dropdown zDropdownTrigger [zDropdownMenu]="notifications" class="rounded-full p-2 bg-accent hover:bg-black/20">
                         <z-icon [zType]="'bell'" [zSize]="'lg'" class="text-primary hover:text-white" />

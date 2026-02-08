@@ -5,6 +5,8 @@ import { Layout } from './core/layout/layout';
 import { Customers } from './features/customers/customers';
 import { Payments } from './features/payments/payments';
 import { Login } from './features/login/login';
+import { Policies } from './features/policies/policies';
+import { Files } from './features/files/files';
 
 export const routes: Routes = [
     {
@@ -20,8 +22,16 @@ export const routes: Routes = [
                 component: Customers
             },
             {
+                path: 'policies',
+                component: Policies
+            },
+            {
                 path: 'finance',
                 component: Payments
+            },
+            {
+                path: 'files',
+                component: Files
             },
             
         ]
